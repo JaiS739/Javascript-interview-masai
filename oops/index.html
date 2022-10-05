@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oops</title>
+  </head>
+  <body>
+    <h1>oops concepts</h1>
+    <p>combining classed and objects is called oops.</p>
+    <p>classes was introduced in the ES6 2015</p>
+    <p>
+      if objects share the same key or properties then we can use class instead
+      of making lots of objects
+    </p>
+    <h2>
+      It is type of function, but in place of keyword function we write class.
+      We will assigned the properties in the constructor
+    </h2>
+    <h3>
+      It is a user defined prototype or blueprint which can be used to create
+      multiple objects.
+    </h3>
+  </body>
+</html>
+
+<script>
+  class Students {
+    // this contructor has properties which can be inherit during object creation:-
+    constructor(name, age, sub) {
+      this.myname = name;
+      this.myage = age;
+      this.mysub = sub;
+    }
+    biodata() {
+      return `hi this is ${this.myname} , i am ${this.myage} old`;
+    }
+  }
+
+  // now inheriting the properties of Students class by using extends and super keyword:-
+
+  class Player extends Students {
+    constructor(name, age, sub, game) {
+      super(name, age, sub);
+      this.mygame = game;
+    }
+    myGameData() {
+      return `${super.biodata()}, I am player of ${this.mygame}`;
+    }
+  }
+
+  let std1 = new Player("jai", 27, "FSD", "cricket");
+  console.log(std1.myGameData());
+</script>

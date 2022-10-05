@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promises</title>
+  </head>
+  <body>
+    <h1>Promises</h1>
+    <p>
+      promise object represents the eventual completion or failure of an
+      asynchronous operation or its resulting value
+    </p>
+    <h3>it has three states:-</h3>
+    <h4>success</h4>
+    <h4>pending:- initial state, waiting for the response</h4>
+    <h4>failed</h4>
+  </body>
+</html>
+
+<script>
+  //   let p1 = new Promise((resolve, reject) => {
+  //     let a = 1 + 1;
+  //     if (a === 2) {
+  //       resolve("Success");
+  //     } else {
+  //       resolve("failed");
+  //     }
+  //   });
+
+  //   p1.then((mes) => {
+  //     console.log(`this is message from then ${mes}`);
+  //   }).catch((err) => {
+  //     console.log(`this message from catch ${err}`);
+  //   });
+
+  let datas = [
+    { name: "jai", profession: "fsd" },
+    { name: "sri", profession: "house wife" },
+  ];
+
+  let getDatas = () => {
+    setTimeout(() => {
+      let output = "";
+
+      datas.forEach((ele, index) => {
+        output += `<li>${ele.name}</li>`;
+      });
+
+      document.body.innerHTML = output;
+    }, 1000);
+  };
+
+  //   let addData = (newData, cb) => {
+  //     setTimeout(() => {
+  //       datas.push(newData);
+  //       cb();
+  //     }, 2000);
+  //   };
+
+  //   addData({ name: "srinika", profession: "masti karna" }); /// this fn is called after 2sec
+  //   getDatas(); // this is fn is called after 1 sec
+  // ----------------------**************-----------------------
+  //   callback:-
+  //   -->in this we have problem that fun getDats showing the data on the dom but showing the added data;
+  //   --> to overcome this we will use callback()
+
+  //   promise:-
+
+  let addData = (newData) => {
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        datas.push(newData);
+        let error = true;
+        if (error) {
+          res();
+        } else {
+          rej("something is wrong");
+        }
+      }, 2000);
+    });
+    let;
+  };
+
+  addData({ name: "srinika", profession: "masti karna" })
+    .then(getDatas)
+    .catch((err) => {
+      console.log(err);
+    });
+</script>

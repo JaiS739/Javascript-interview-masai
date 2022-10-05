@@ -1,0 +1,11 @@
+Absolute:-
+in case of absolute:- it takes referrence from the its parent if parent has given relative as position otherwise it will take the resferrence from the body.
+
+
+Relative :-  
+it takes the referrence from its original position and creates a blank space.
+
+fixed :- takes the referrence from the body.
+
+sticky :- default position
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Practice</title>
+  </head>
+  <body>
+    <h1>Promises practice</h1>
+  </body>
+</html>
+<script>
+  var store_opened = false;
+
+  let order = (delay, work) => {
+    return new Promise((resolve, reject) => {
+      if (store_opened) {
+        setTimeout(() => {
+          resolve(work());
+        }, delay);
+      } else {
+        reject(console.log("store is closed"));
+      }
+    });
+  };
+
+  order(2000, () => {
+    console.log("Ice order taken");
+  })
+    .then(() => {
+      return order(2000, () => {
+        console.log("ice cream is ready");
+      });
+    })
+    .catch((e) => {
+      console.log("store is closed come tomorrow");
+    })
+    .finally(() => {
+      console.log("end of the season");
+    });
+</script>
