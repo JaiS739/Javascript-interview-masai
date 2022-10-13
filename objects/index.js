@@ -86,9 +86,11 @@ let sealObject = {
   name: "jai",
 };
 
-Object.seal(sealObject); // this wont allow you to add anything. You can change the existing values
+Object.seal(sealObject); // this wont allow you to add anything. but You can change the existing values
 sealObject.age = 29;
-// console.log(sealObject);
+console.log(sealObject);
+sealObject.name = "krishna";
+console.log(sealObject);
 
 // ---------------------------IMPORTANT--------------------
 

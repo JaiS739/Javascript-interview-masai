@@ -1,8 +1,8 @@
-let arr = ["jai", "sri", "srinika", "jaishvik"];
+let arr = ["jai", "sri", "srinika", "jaishvik", "rahul", "pramod"];
 
 let [father, mother, daughter, son] = arr;
 
-console.log(father, mother, son, daughter);
+// console.log(father, mother, son, daughter);
 
 // skip the 2 value:- ie sri
 
@@ -20,8 +20,8 @@ let [daddy, , naina, betaji] = arr;
 
 // eg:-
 
-let [papa, , , , lastValue = "unknown value"] = arr;
+let [papa, , , , lastValue = "unknown value", john] = arr;
 
-console.log(lastValue);
+// console.log(john);
 
 // but in case if there is 5th index then it will give the value of that 4th index:-

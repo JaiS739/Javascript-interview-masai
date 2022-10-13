@@ -48,7 +48,7 @@ let teacher = {
 
 // no need to pass name or any property of object it will take automatically:-
 function getEmail(sub1, sub2) {
-  return `${this.name}@gmail.com i will teach ${sub1} and ${sub2}`;
+  return `${this.name}@gmail.com i teach ${sub1} and ${sub2}`;
 }
 
 let answer = getEmail.call(students, "maths", "science"); /// here we  are passing arguments of any type:

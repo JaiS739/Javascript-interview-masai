@@ -64,4 +64,31 @@ let sayHi = () => {
 
 // console.log(sayHi());
 
-// --------------------------xxxxxxxxxxxxxxxxxxxxx-----------------------
+// --------------------------PURE FUNCTION-----------------------
+
+// first of let have a look on impure function:-
+
+let impure_input = 5;
+
+let impure = () => {
+  console.log(impure_input + 1);
+};
+
+impure();
+// console.log(x);
+
+// pure function :-
+
+// it will take the input and perform operation on it only and return the output. It will not disturb other variable and it is predictable. it has no sideeffects.
+
+// eg:-
+
+let pure = 5;
+
+let pureFunction = (pure) => {
+  console.log(pure + 1);
+};
+
+pureFunction(10); ///   11
+// here you can see it is not disturbing outer variable :-/
+console.log(pure); ////  5
