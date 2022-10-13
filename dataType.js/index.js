@@ -27,4 +27,4 @@ let multiply = "5" * 2; // 10 and type will be number
 // when we use characters instead of numbers as string with string number then type will be number but ans will be NaN:-
 
 let NAN = "5" - "yes";
-// console.log(typeof NAN, NAN);
+console.log(typeof NAN, NAN);

@@ -11,32 +11,25 @@
   </body>
 </html>
 <script>
-  var store_opened = false;
+  let shop_open = true;
 
-  let order = (delay, work) => {
-    return new Promise((resolve, reject) => {
-      if (store_opened) {
+  let take_order = (time, work) => {
+    return new Promise((res, rej) => {
+      if (shop_open) {
         setTimeout(() => {
-          resolve(work());
-        }, delay);
+          res(work());
+        }, time);
       } else {
-        reject(console.log("store is closed"));
+        rej(console.log("shop is closed"));
       }
     });
   };
 
-  order(2000, () => {
-    console.log("Ice order taken");
-  })
-    .then(() => {
-      return order(2000, () => {
-        console.log("ice cream is ready");
-      });
-    })
-    .catch((e) => {
-      console.log("store is closed come tomorrow");
-    })
-    .finally(() => {
-      console.log("end of the season");
+  take_order(2000, () => {
+    console.log("icecream is getting ready");
+  }).then(() => {
+    return take_order(5000, () => {
+      console.log("here is your icecream");
     });
+  });
 </script>

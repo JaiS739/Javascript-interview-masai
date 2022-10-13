@@ -56,4 +56,12 @@ let user = function details() {
   console.log(details);
 };
 
-user(); // it will return :- ƒ details() {  console.log(details);}
+// user(); // it will return :- ƒ details() {  console.log(details);}
+
+let sayHi = () => {
+  return (() => 0)(); // it will return 0 as ()=>0 this is an arrow function and after that by this () we are calling the function
+};
+
+// console.log(sayHi());
+
+// --------------------------xxxxxxxxxxxxxxxxxxxxx-----------------------
