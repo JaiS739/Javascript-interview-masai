@@ -61,12 +61,12 @@ let b = 6;
 // delete in array :-
 
 let num = [1, 2, 3];
-delete num[1];
+delete num[1]; // give index value
 // console.log(num); // [1,<empty item>,3]
 
 // ----------------xxxxxxxxxxxxxx------------
 
-// mergin two arrays of which one element is same:-
+// merging two arrays of which one element is same:-
 
 let num1 = [1, 2, 3];
 let num2 = [3, 4, 5];
